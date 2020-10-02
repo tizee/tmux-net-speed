@@ -82,7 +82,7 @@ write_file()
     local val="$2"
 
     # TODO Add error checking
-    echo "$val" > "$path"
+    echo "$val" > "$path" 2>/dev/null
 }
 
 get_interfaces()
