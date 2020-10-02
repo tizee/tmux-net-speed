@@ -6,7 +6,11 @@ source "$CURRENT_DIR/helpers.sh"
 sum_download_speed()
 {
     # Output uses first column
-    sum_speed 1
+    if is_osx;then
+      sum_speed 7
+    elif is_linux;then
+      sum_speed 1
+    fi
 }
 
 main()
