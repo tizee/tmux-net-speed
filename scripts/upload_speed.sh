@@ -22,7 +22,8 @@ main()
 
     ## Format output
     local format=$(get_tmux_option @upload_speed_format "%s")
-    printf "$format" "$vel"
+    local upload_speed=$(printf "$format" "$vel")
+    echo "$upload_speed"
 }
 main
 

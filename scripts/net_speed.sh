@@ -10,6 +10,7 @@ main()
 
     ## Format output
     local format=$(get_tmux_option @net_speed_format "D:%10s U:%10s")
-    printf "$format" "$download" "$upload"
+    local netspeed=$(printf "$format" "$download" "$upload")
+    echo "$netspeed"
 }
 main

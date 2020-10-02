@@ -39,11 +39,11 @@ get_velocity()
     local vel_mb=$(( vel / MILLION ))
 
     if [[ $vel_mb != 0 ]] ; then
-        echo -n "$vel_mb MB/s"
+        echo "$vel_mb MB/s"
     elif [[ $vel_kb != 0 ]] ; then
-        echo -n "$vel_kb KB/s";
+        echo "$vel_kb KB/s";
     else
-        echo -n "$vel B/s";
+        echo "$vel B/s";
     fi
 }
 
@@ -82,7 +82,7 @@ write_file()
     local val="$2"
 
     # TODO Add error checking
-    echo "$val" > "$path" 2>/dev/null
+    echo "$val" > "$path" 2>&1
 }
 
 get_interfaces()
