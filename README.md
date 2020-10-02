@@ -1,21 +1,37 @@
 # tmux-net-speed
+
 Tmux plugin to monitor upload and download speed of one or all interfaces.
 
+Use `netstat` to support macOS.
+
+## OS
+
+- Linux
+- MacOS
+
+## Requirements
+
+- `netstat` for `Darwin`
+
 ## Usage
+
 Add one of the following format string to `status-right` tmux option.
 
 ## Special Credit
+
 This plugin is roughly based on the various plugins in [https://github.com/tmux-plugins]("tmux-plugins").
 
 ## Formats
+
 Shows value in either MB/s, KB/s, or B/s.
 
 - `#{download_speed}` - Shows only download speed,
 - `#{upload_speed}` - Shows only upload speed,
 - `#{net_speed}` - Shows both the upload and download speeds.
-    **Example**: "D: 123 MB/s U: 25 MB/s"
+  **Example**: "D: 123 MB/s U: 25 MB/s"
 
 ## Past Values
+
 Since this is a difference, the old values are stored in files in `/tmp/`. The user must be able to
 read and write to this directory.
 
@@ -64,17 +80,16 @@ Reload TMUX environment (type this in terminal)
 
 If format strings are added to `status-right`, they should now be visible.
 
-
 ### Storage of Past Values
+
 This plugin stores the total output for all the interfaces in a file in `/tmp/`. Therefore, the current user must be able to write and read from that directory.
 
-
 ### TODO
+
 - Add unit tests
 - Add error handling
 - Configure which interfaces to calculate
 - Configure format string for `#{net_speed}`
-- Handle other OSs (currently only supports Linux)
 
 ### License
 
